@@ -41,8 +41,13 @@ docker run --name kibana --net elastic -p 5601:5601 docker.elastic.co/kibana/kib
   If you're running in Docker, copy the enrollment token and run:
   `docker run -e "ENROLLMENT_TOKEN=<token>" docker.elastic.co/elasticsearch/elasticsearch:8.7.1`
  ```
+ 
  - Log in to [Kibana]( http://0.0.0.0:5601/) as the `elastic` user with the password that was generated when you started Elasticsearch
- - Search for Kibana's Developer Console in **Management > Dev Tools**
+ 
+ - Search for Kibana's Developer Console in **Management > Dev Tools** :
+ 
  ![image](console_es.PNG)
- - You should see something like that
- -  ![image](console_es2.PNG)
+ 
+ - You should see something like that:
+ 
+ ![image](console_es2.PNG)
