@@ -4,7 +4,7 @@
 - Clauses : must, must_not,should...
 - Good practices
 
-## Bool Query 
+## [Bool Query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-bool-query.html)
 
 -Pipelines that combines mutliple conditions
 #Clauses :
