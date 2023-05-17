@@ -6,8 +6,8 @@
 
 ## [Bool Query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-bool-query.html)
 
--Pipelines that combines mutliple conditions
-#Clauses :
+- Pipelines that combines mutliple conditions
+- Clauses :
 - Must (hard condition)
 - Must not (hard condition)
 - Should (preferably from)
