@@ -20,7 +20,8 @@ docker run --name kibana --net elastic -p 5601:5601 docker.elastic.co/kibana/kib
  ```shell
  curl localhost:5601
  ```
- Inserer image Deckstop
+![image](container_deckstop.PNG)
+
  - You should see the following message in the console, paste it somewhere safe:
  ```
 ✅ Elasticsearch security features have been automatically configured!
