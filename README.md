@@ -1,9 +1,9 @@
 # ElasticSearch & Kibana Tutorial
 A sample repository for discovering Elastic Search and Kibana
 ![image](https://github.com/TrinhRobin/ElasticSearch_Kibana_Tutorial/assets/77126392/9413ab0b-6ee9-451f-aef9-9b45bd3f308d)
-- [Install Docker Deckstop]
+- [Install Docker Deckstop](https://docs.docker.com/desktop/)
  
-- [Installation Guide Elastic Search](https://github.com/elastic/elasticsearch)
+- [Install Guide Elastic Search](https://github.com/elastic/elasticsearch)
  
 - Download the official Docker Images of Elastic Search and Kibana (here the 8.7.1 version) , then launch the containers :
  
@@ -43,4 +43,6 @@ docker run --name kibana --net elastic -p 5601:5601 docker.elastic.co/kibana/kib
  ```
  - Log in to [Kibana]( http://0.0.0.0:5601/) as the `elastic` user with the password that was generated when you started Elasticsearch
  - Search for Kibana's Developer Console in **Management > Dev Tools**
+ ![image](console_es.PNG)
  - You should see something like that
+ -  ![image](console_es2.PNG)
