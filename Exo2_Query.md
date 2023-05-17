@@ -6,7 +6,6 @@
 - Query DSL > Query 
 - Match Query (equality test)
 - Range Query :  documents with fields that fall in a given range
--  Bool Query : combine multiple boolean conditions : must, must_not,should...
  
 ## GET
 ```
