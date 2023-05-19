@@ -1,6 +1,6 @@
-# Mappings & Analyzer
+# [Mappings](https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping.html)& [Analyzer](https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-analyzers.html)
 - **Inverted** Index and Analysis
-- Mapping a document's fields : data types
+- [ Mapping](https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping.html) a document's fields : data types
 - Multi-fields for indexing a field in multpile ways
 - Either **Dynamic** or **Custom** Mapping
 - Create a custom Analyzer and use it with the `_analyze` API 
