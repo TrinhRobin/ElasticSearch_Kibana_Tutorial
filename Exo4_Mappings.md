@@ -1,4 +1,4 @@
-# [Mappings](https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping.html)& [Analyzer](https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-analyzers.html)
+# [Mappings](https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping.html) & [Analyzer](https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-analyzers.html)
 - **Inverted** Index and Analysis
 - [ Mapping](https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping.html) a document's fields : data types
 - Multi-fields for indexing a field in multpile ways
