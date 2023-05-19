@@ -59,3 +59,5 @@ docker run --name kibana --net elastic -p 5601:5601 docker.elastic.co/kibana/kib
 | 1    | [CRUD Operations](Exo1_CRUD.md) | :star: |
 | 2     | [Basic Queries](Exo2_Query.md)   |  :star: |
 | 3 |[Boolean Queries](Exo3_BoolQueries.md)     |   :star::star: |
+| 4 |[Mappings and Analyzers](Exo4_Mappings.md) |   :star::star: |
+
