@@ -208,3 +208,92 @@ GET create_my_analyzer/_analyze
   ]
 }
 ```
+
+## Define Explicit Mappings
+- 1) Index a document as a temporary index
+
+```
+PUT my_explicit_mapping/_doc/1
+{
+"date": "June 21,1857",
+"author": "Charles Baudelaire",
+"title": "Les Fleurs du mal",
+"sub_title": "Spleen et Ideal",
+"url": "https://en.wikipedia.org/wiki/Les_Fleurs_du_mal",
+"content": "volume of French poetry",
+"locales": "fr",
+"@timestamp": "2017-12-22T07:00:00.000Z",
+"category": "Litterature"
+}
+```
+- 2) Get the Dynamic Mapping
+GET my_explicit_mapping/_mapping
+
+
+- 3) Edit the mapping 
+- Change the wrong types and re index the document
+
+```
+PUT new_mapping
+{
+"mappings": {
+    "properties": {
+      "@timestamp": {
+        "type": "date"
+      },
+      "author": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "category": {
+        "type": "keyword"
+        
+      },
+      "content": {
+        "type": "text"
+        
+      },
+      "date": {
+        "type": "date"
+      },
+       "url": {
+           "type" : "text"
+       },
+       "locales": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "sub_title": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "title": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        }
+    }
+  }
+}
+
+GET new_mapping/_mapping
+```
