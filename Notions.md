@@ -67,7 +67,15 @@ PUT blogs/_doc/551
 }
 shard = hash(_routing) % number_of_primary_shards
 ```
-
+# Elastic Search Response :
+- **CRUD** operations return `shard` information :
+```
+"_shards": {
+    "total": 2,
+    "successful": 1,
+    "failed": 0
+  }
+```
 # Search & Scoring
 
 - Search = Query then fetch :
