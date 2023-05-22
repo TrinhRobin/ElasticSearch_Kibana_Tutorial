@@ -1,3 +1,9 @@
+# Summary :
+- Elastic Search has an distributed architecture based on cluster/slave-master nodes
+- Elastic Search uses **shards** to divide and scale the data of an **index**
+- Each shard consists of each of one primary and many replicas
+- Query consists of a **query** phase (operated on each shard separatly) and a **fetch** phase (aggregation of local results)
+
 # Nodes
 ## Nodes Role : 
 - Master eligible ?
@@ -47,6 +53,12 @@ PUT my_index
 - High availability (Promotion of Replica if needed)
 - Better Scalability : Read throughput (queries can be performed on both primary and replicas shard
 
+## How to determine the number of shards ?
+- heavy indexing calls for higher number of primary shards
+- heavy search traffic = increase the number of replicas
+- large dataset = more primary shards (each shard around 10-40 GB)
+- small dataset = one shard index
+
 ## Document Routing
  - Formula for determining which shard to index the document to :
 ```
@@ -54,4 +66,21 @@ PUT blogs/_doc/551
 {
 }
 shard = hash(_routing) % number_of_primary_shards
+```
+
+# Search & Scoring
+
+- Search = Query then fetch :
+- doc identifiers and local results are performed for each shard
+- and then aggregated/merged to get global/final result
+
+## Computing the `_score` :
+- Term Frequency (TF) is a document-level information, so it's a local value
+-  whereas IDF is a global value
+- by default `_score` computes a local IDF (more efficient)
+- it's hardly a problem on large datasets
+- or if the documents are well distributed acroos the multiple shards
+- To get the Global IDF (costly) you may use the `search_type=dfs_query_then_fetch` parameter :
+```
+GET comments/_search?search_type=dfs_query_then_fetch
 ```
