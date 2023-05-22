@@ -8,10 +8,39 @@
 ## Nodes Role : 
 - Master eligible ?
 - Main Roles : Data, Ingest, Coordinating, Machine Learning
-- Get the Cluster State : nodes in the cluster, indices, mappings, settings
+- Get the Cluster **State** : nodes in the cluster, indices, mappings, settings
 ```
 GET _cluster/state
 ```
+- Get the Cluster **Health**
+
+```
+GET _cluster/health
+```
+Output :
+```
+{
+  "cluster_name": "docker-cluster",
+  "status": "yellow",
+  "timed_out": false,
+  "number_of_nodes": 1,
+  "number_of_data_nodes": 1,
+  "active_primary_shards": 34,
+  "active_shards": 34,
+  "relocating_shards": 0,
+  "initializing_shards": 0,
+  "unassigned_shards": 16,
+  "delayed_unassigned_shards": 0,
+  "number_of_pending_tasks": 0,
+  "number_of_in_flight_fetch": 0,
+  "task_max_waiting_in_queue_millis": 0,
+  "active_shards_percent_as_number": 68
+}
+```
+- `status` : green (all shards allocated) , yellow (all primaries allocated but >1 replica isn't) or red (>1 primary shard not allocated), 
+- exists at shard, index and cluster level
+- Shards Allocation : shards can have several states : unassigned, initializing, active, relocating
+
 ## Configuring Node Role
 - In the `elasticsearch.yml` file
 - Parameters : `node.master`, `node.ingest`, `node.data`
