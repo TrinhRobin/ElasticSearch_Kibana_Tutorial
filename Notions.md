@@ -43,5 +43,7 @@ PUT my_index
   }
 }
 ```
-
+- Replicas advantages :
+- High availability (Promotion of Replica if needed)
+- Better Scalability : Read throughput (queries can be performed on both primary and replicas shard
 
