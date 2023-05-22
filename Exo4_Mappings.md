@@ -4,6 +4,7 @@
 - Multi-fields for indexing a field in multpile ways
 - Either **Dynamic** or **Custom** Mapping
 - Create a custom Analyzer and use it with the `_analyze` API 
+- Define Explicit Mapping
 ## Mappings
 
 - **Mapping** is appling a Schema Definition => Data types, Names and Storage to the **Fields**
