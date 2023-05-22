@@ -23,4 +23,25 @@ GET _cluster/state
  
 # Shard
 - A [shard](https://www.elastic.co/guide/en/elasticsearch/reference/current/size-your-shards.html) is a worker unit that disitributes data to the cluster's nodes
--
+- An index can be seen as a pointer that refers multiple shards 
+-  An indes is split into shards before indexing of any document
+-  Documents are replicated thanks to 2 types of shards :
+-  **Primary** (original shards of an index)
+-  **Replicas** (copies)
+-  A Primary and its Replicas are stored on different nodes
+-  The node master decides on the distribution of shards 
+-  For instance it can redistribute the shards if new nodes are added to the cluster
+-  For an index, the number primary shards is by default set to 5
+-  Number of shards can be changed but costly
+-  Number of replicas can be adapt at any given time :
+```
+PUT my_index
+{
+ "settings": {
+  "number_of_shards": 3,
+  "number_of_replicas": 2
+  }
+}
+```
+
+
