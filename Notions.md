@@ -41,6 +41,11 @@ Output :
 - exists at shard, index and cluster level
 - Shards Allocation : shards can have several states : unassigned, initializing, active, relocating
 
+- Get The Health of a specific index:
+```
+GET _cluster/health/{index_name}
+```
+
 ## Configuring Node Role
 - In the `elasticsearch.yml` file
 - Parameters : `node.master`, `node.ingest`, `node.data`
