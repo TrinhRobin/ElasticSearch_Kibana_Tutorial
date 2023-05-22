@@ -76,6 +76,22 @@ shard = hash(_routing) % number_of_primary_shards
     "failed": 0
   }
 ```
+- `total` : this operation will be executed on this amout of shards copies (both primary & replicas)
+-  `successful` : number of shard copies with sucessful index operations
+-  `failed` : idem with failed operations
+-  `failures` : array with description of the error's root
+
+- Same response body for the `_search` API:
+```
+ "_shards": {
+    "total": 1,
+    "successful": 1,
+    "skipped": 0,
+    "failed": 0
+  },
+```
+- `skipped` : number of shard that avoided the search execution because they the data stored inside them is not relevant for this query
+
 # Search & Scoring
 
 - Search = Query then fetch :
