@@ -47,3 +47,11 @@ PUT my_index
 - High availability (Promotion of Replica if needed)
 - Better Scalability : Read throughput (queries can be performed on both primary and replicas shard
 
+## Document Routing
+ - Formula for determining which shard to index the document to :
+```
+PUT blogs/_doc/551
+{
+}
+shard = hash(_routing) % number_of_primary_shards
+```
