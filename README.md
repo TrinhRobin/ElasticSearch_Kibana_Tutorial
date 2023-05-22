@@ -52,7 +52,7 @@ docker run --name kibana --net elastic -p 5601:5601 docker.elastic.co/kibana/kib
  
  ![image](console_es2.PNG)
 
-- Off the Elastic Search hole you go !
+- Off to the Elastic Search rabbbit hole you go !
 
 | Exercice      | Topic          | Difficulty  |
 | ------------- |:-------------:| -----:|
