@@ -142,3 +142,10 @@ shard = hash(_routing) % number_of_primary_shards
 ```
 GET comments/_search?search_type=dfs_query_then_fetch
 ```
+
+## Cluster Allocation Explain API :
+- Show informations of the first unnassigned shard (status=yelllow) found 
+```
+GET _cluster/allocation/explain
+```
+
